@@ -1,13 +1,17 @@
-all: build
+TARGET := example
 
-build: main.o bubble_sort.o
-	gcc -Wall -o example main.o bubble_sort.o
+ODIR := ./obj
 
-main.o : main.c
-	gcc main.c -o main.o -c
+# .c files to compile
+_OBJS := main.c bubble_sort.c
 
-bubble_sort.o : bubble_sort.c
-	gcc bubble_sort.c -o bubble_sort.o -c
+OBJS = $(patsubst %.c,$(ODIR)/%.o,$(_OBJS))
+
+all: $(OBJS)
+	gcc -Wall -o bin/$(TARGET) $(OBJS)
+
+$(ODIR)/%.o: %.c
+	gcc $^ -o $@ -c
 
 clean : 
-	rm -f *.o
+	rm -f obj/* bin/*
