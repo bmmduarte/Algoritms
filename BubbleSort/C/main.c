@@ -5,7 +5,7 @@ void printIntArray(int array[], int length);
 
 int main()
 {
-	int array[] = {4, 2, 1, 6, 5, 3, 9, 52, 17, 2, 1, 6, 5};
+	int array[] = {4, 2, 1, 6, 5, 3, 9, 52, 17, 3, 11, 16, 35};
 	
 	size_t arr_len = sizeof(array) / sizeof(int);
 
