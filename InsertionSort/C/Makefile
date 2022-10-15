@@ -5,8 +5,7 @@ ODIR := obj
 BDIR := bin
 
 # .c files to compile
-_OBJS := main.c bubble_sort.c
-
+_OBJS := main.c insertion_sort.c
 
 OBJS = $(patsubst %.c,$(ODIR)/%.o,$(_OBJS))
 

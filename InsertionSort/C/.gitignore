@@ -1,0 +1,3 @@
+# ignore post-build directories
+bin/
+obj/
