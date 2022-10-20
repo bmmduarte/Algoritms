@@ -1,23 +1,19 @@
 #include "insertion_sort.h"
 
-void swap(int * elem1, int * elem2)
-{
-    int aux = *elem1;
-    *elem1 = *elem2;
-    *elem2 = aux;
-}
-
 void insertionSortArray(int array[], int n)
 {   
 
+    int key, j;
     for(int i=1; i < n; i++)
     {
-        for(int j=i-1; j >= 0 ; j--)
+        key = array[i];
+        for(j=i-1; j >= 0 ; j--)
         {
-            if(array[j] > array[j+1])
-                swap(&array[j], &array[j+1]);
+            if(array[j] > key)
+                array[j+1] = array[j];
             else
                 break;
         }
+        array[j+1] = key;
     }
 }
